@@ -1,0 +1,23 @@
+{
+  "name": "real-time",
+  "version": "1.0.0",
+  "description": "A rich web application that leverages WebSockets to push data to connected clients in real time",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kswhyte/real-time.git"
+  },
+  "keywords": [
+    "real",
+    "time"
+  ],
+  "author": "Kinan Whyte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kswhyte/real-time/issues"
+  },
+  "homepage": "https://github.com/kswhyte/real-time#readme"
+}
