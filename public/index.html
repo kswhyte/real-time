@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Real Time</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div id="connection-count">Connected Users:</div>
+    <div id="status-message"></div>
+
+    <form id="poll-form" method="post">
+      <input id="poll-question" type="text" name="question" placeholder="What would you like to know?" pattern="[a-z]{1,15}" title="Username should only contain lowercase letters. e.g. john">
+      <input type="text" placeholder="Poll Response 1" pattern="[a-z]{1,15}" title="Username should only contain lowercase letters. e.g. john">
+      <input type="text" placeholder="Poll Response 2" pattern="[a-z]{1,15}" title="Username should only contain lowercase letters. e.g. john">
+      <input type="text" placeholder="Poll Response 3" pattern="[a-z]{1,15}" title="Username should only contain lowercase letters. e.g. john">
+      <input type="text" placeholder="Poll Response 4" pattern="[a-z]{1,15}" title="Username should only contain lowercase letters. e.g. john">
+      <button type="submit">Create Poll</button>
+      <input id="time-picker" type="time">
+      <input id="date-picker" data-provide="datepicker" data-date-format="mm/dd/yyyy">
+    </form>
+
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/client.js"></script>
+  </body>
+</html>
