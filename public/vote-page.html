@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Real Time | Vote Page</title>
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+  </head>
+  <body>
+    <div id="connected-users-count">Connected Users:</div>
+    <div id="status-message"></div>
+
+    <!--<div class="poll-container">
+      <h1>Your Question</h1>
+      <h3 id="deadline">This poll ends on <span id="ending-date"></span> at <span id="ending-time"></span></h3>
+
+      <div id="options">
+        <button>black</button>
+        <button>mocha</button>
+        <button></button>
+        <button></button>
+        <div id="vote-feedback"></div>
+      </div>
+    </div>-->
+
+    <div id="poll-results-title"><h3>Poll Results:</h3>
+    <div id="vote-count"></div>
+
+    <script type="text/javascript" src="../server.js"></script>
+    <script type="text/javascript" src="./client.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  </body>
+</html>

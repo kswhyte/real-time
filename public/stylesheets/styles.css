@@ -1,0 +1,56 @@
+html {
+  background-color: black;
+  color: white;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+input,
+input:valid {
+    border-color: #ccc;
+}
+
+#poll-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+.input-field {
+  margin: 5px auto;
+  width: 200px;
+}
+
+.poll-option {
+  margin: 0px auto;
+}
+
+#bottom-option {
+  margin-bottom: 10px;
+}
+
+#create-poll-button {
+  margin: 5px;
+  color: red;
+}
+
+#poll-question {
+  width: 300px;
+  margin: 10px auto;
+}
+
+#connection-count {
+  /*color: red;*/
+}
+
+/*----------*/
+
+#root {
+  width: 280px;
+  margin: 40px auto;
+  padding: 10px;
+}
