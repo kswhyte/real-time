@@ -4,33 +4,52 @@
     <meta charset="utf-8">
     <title>Real Time | Create a Poll</title>
     <link rel="stylesheet" href="/stylesheets/reset.css">
-    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/create-poll.css">
+    <link href="https://fonts.googleapis.com/css?family=Arsenal|Lato|Open+Sans" rel="stylesheet">
   </head>
 
   <body>
-    <div id="connected-users-count">Connected Users:</div>
-    <div id="status-message"></div>
-
+    <h1 id="app-title">Poll Builder</h1>
     <form id="poll-form" method="post">
-      <input class="input-field" id="poll-question" type="text" name="question" placeholder="What would you like to know?" title="Username should only contain lowercase letters. e.g. john">
-
-      <input class="input-field poll-option1" type="text" placeholder="Poll Response 1" title="Username should only contain lowercase letters. e.g. john">
-      <input class="input-field poll-option2" type="text" placeholder="Poll Response 2" title="Username should only contain lowercase letters. e.g. john">
-      <input class="input-field poll-option3" type="text" placeholder="Poll Response 3" title="Username should only contain lowercase letters. e.g. john">
-      <input class="input-field poll-option4" id="bottom-option" type="text" placeholder="Poll Response 4" title="Username should only contain lowercase letters. e.g. john">
-      <!--<input class="input-field poll-option" id="bottom-option" type="text" placeholder="Poll Response 4" pattern="[a-zA-z\s]{1,15}" title="Username should only contain lowercase letters. e.g. john">-->
+      <label class="poll-input-label question-label">
+        Create a Poll Question <br>
+        <input
+          class="input-field"
+          id="poll-question"
+          type="text"
+          name="question"
+          placeholder="What would you like to know?"
+          title="Username should only contain lowercase letters. e.g. john"
+        >
+      </label>
+      <label class="poll-input-label options-container">
+        What options would you like your audience to choose from? <br>
+        <input class="input-field poll-option1" type="text" placeholder="Poll Response 1" title="Username should only contain lowercase letters. e.g. john">
+        <input class="input-field poll-option2" type="text" placeholder="Poll Response 2" title="Username should only contain lowercase letters. e.g. john">
+        <input class="input-field poll-option3" type="text" placeholder="Poll Response 3" title="Username should only contain lowercase letters. e.g. john">
+        <input class="input-field poll-option4" id="bottom-option" type="text" placeholder="Poll Response 4" title="Username should only contain lowercase letters. e.g. john">
+        <!--<input class="input-field poll-option" id="bottom-option" type="text" placeholder="Poll Response 4" pattern="[a-zA-z\s]{1,15}" title="Username should only contain lowercase letters. e.g. john">-->
+      </label>
 
       <button id"create-poll-button" type="submit">Create Poll</button>
 
-      <input class="input-field" id="time-picker" type="time">
-      <input class="input-field" id="date-picker" type="date">
+      <div class="deadline-container">
+        <label class="poll-input-label date-label">
+          This poll ends on... <br>
+          <input class="input-field" id="date-picker" type="date">
+        </label>
+        <label class="poll-input-label time-label">
+          ...AND ends at... <br>
+          <input class="input-field" id="time-picker" type="time">
+        </label>
+      </div>
     </form>
 
-    <ul id="poll-list">Available Polls:</ul>
+    <ul id="poll-list">No Available Polls</ul>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="/client.js"></script>
+    <script type="text/javascript" src="/create-poll.js"></script>
     <!--<script src="https://cdn.auth0.com/js/lock/10.9.1/lock.min.js"></script>
     <script src="https://cdn.auth0.com/w2/auth0-7.6.1.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->

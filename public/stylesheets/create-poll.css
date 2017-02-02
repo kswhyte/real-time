@@ -1,0 +1,173 @@
+html {
+  font-family: 'Arsenal', sans-serif;
+  background-color: #111111;
+  color: #fcdd55;
+  align-items: center;
+  justify-content: center;
+}
+
+h1#app-title {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 4em;
+  color: #e2e2e2;
+}
+
+.poll-input-label {
+  text-align: center;
+  margin: 10px auto;
+  font-size: 1.25em;
+  color: #fc5555;
+}
+
+.input-field {
+  color: black;
+  align-items: center;
+  margin: 10px auto;
+  width: 200px;
+  border: 3px solid white;
+  border-radius: 5px;
+  -webkit-box-shadow:
+    inset 0 0 8px  rgba(0,0,0,0.5),
+          0 0 16px rgba(0,0,0,0.5);
+  -moz-box-shadow:
+    inset 0 0 8px  rgba(0,0,0,0.5),
+          0 0 16px rgba(0,0,0,0.5);
+  box-shadow:
+    inset 0 0 8px  rgba(0,0,0,0.5),
+          0 0 16px rgba(0,0,0,0.5);
+  padding: 5px;
+  /*background-color: rgba(101, 101, 101, 0.54);*/
+    background-color: #e7e7e7;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+input,
+input:valid {
+    border-color: #ccc;
+}
+
+::-webkit-input-placeholder {
+   color: #000;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #000;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #000;
+}
+
+:-ms-input-placeholder {
+   color: #000;
+}
+
+#folder-input:hover {
+  background-color: #e0e0e0;
+}
+
+
+#poll-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+.input-field {
+  margin: 5px auto;
+  width: 200px;
+}
+
+input:not([type=submit]):not([type=file]) {
+  font-family: 'Arsenal', sans-serif;
+  font-size: 16px;
+}
+
+button {
+  font-family: 'Arsenal', sans-serif;
+  margin: 15px auto;
+  width: 100px;
+  padding: 4px 10px 5px 10px;
+  display: block;
+  align-items: center;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #670000;
+  color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #f15151;
+  color: #000;
+}
+
+
+.poll-option {
+  margin: 0px auto;
+}
+
+#bottom-option {
+  margin-bottom: 10px;
+}
+
+#create-poll-button {
+  margin: 5px;
+  color: red;
+}
+
+#poll-question {
+  width: 300px;
+  margin: 10px auto;
+}
+
+.deadline-container {
+  display: flex;
+  align-items: space-around;
+  justify-content: space-around;
+}
+
+.poll-option1, .poll-option2, .poll-option3, .poll-option4 {
+  margin: 6px 3px;
+}
+
+input#date-picker, input#time-picker {
+  margin: 5px;
+}
+
+ul#poll-list {
+  text-align: center;
+  margin: 10px auto 20px auto;
+  font-size: 1.5em;
+}
+
+a.poll-link {
+  margin: 20px auto;
+  outline-style: none;
+  text-decoration: none;
+  color: #e2e2e2;
+}
+
+.poll-link:hover {
+  color: #4648f6;
+}
+
+#connection-count {
+  /*color: red;*/
+}
+
+/*----------*/
+
+#root {
+  width: 280px;
+  margin: 40px auto;
+  padding: 10px;
+}

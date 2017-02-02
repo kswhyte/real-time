@@ -19,7 +19,6 @@ server.listen(port, () => {
 app.locals.title = 'Real Time'
 app.locals.pollForms = []
 
-
 // const expressJWT = require('express-jwt')
 // const jwt = require('jsonwebtoken')
 // let jwt = require('express-jwt');
@@ -43,26 +42,24 @@ app.post('/polls', (req, res) => {
 
   app.locals.pollForms.push(poll)
   // app.locals.pollForms.push(currentPoll)
-  console.log('req.bodyyyy', poll)
   res.send(app.locals.pollForms)
 })
 
-app.get('/polls/:id', (req, res) => {
-  res.sendFile(__dirname + '/public/vote-page.html')
+app.get('/vote/*', (req, res) => {
+  res.sendFile(__dirname + '/public/vote-page/vote-page.html')
 })
 
-app.get('api/v1/polls', (req, res) => {
+app.get('/api/v1/polls', (req, res) => {
   let polls = app.locals.pollForms
-  res.json(polls)
+  res.send(polls)
 })
 
-app.get('api/v1/polls/:id', (req, res) => {
-  console.log('req.params.id', req.params.id)
-  let poll = app.locals.find(poll => {
+app.get('/api/v1/polls/:id', (req, res) => {
+  console.log('POLLFORMS', app.locals.pollForms)
+  let poll = app.locals.pollForms.find(poll => {
     return poll.id === req.params.id
   })
-  console.log('poll details', poll)
-    res.json(poll)
+  res.send(poll)
 })
 
 // ____________

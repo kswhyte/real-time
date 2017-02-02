@@ -1,0 +1,31 @@
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input:not([type=submit]):not([type=file]) {
+  font-family: 'Arsenal', sans-serif;
+  font-size: 16px;
+}
+
+button {
+  font-family: 'Arsenal', sans-serif;
+  margin: 15px auto;
+  width: 100px;
+  padding: 4px 10px 5px 10px;
+  display: block;
+  align-items: center;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #670000;
+  color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #f15151;
+  color: #000;
+}

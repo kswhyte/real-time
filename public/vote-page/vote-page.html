@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auth0-jQuery</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/vote-page.css">
+    <link href="https://fonts.googleapis.com/css?family=Arsenal|Lato|Open+Sans" rel="stylesheet">
+
+    <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <!-- Auth0 lock script -->
+    <script src="//cdn.auth0.com/js/lock/10.3.0/lock.min.js"></script>
+    <script src="/scripts/auth0-variables.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class='auth-container'>
+      <img alt="avatar" class="avatar" style="display:none;">
+      <p>Welcome <span class="nickname"></span></p>
+      <button type="submit" class="btn-login">Sign In</button>
+      <button type="submit" class="btn-logout" style="display:none;">Sign Out</button>
+    </div>
+
+    <div id="connected-users-count">Connected Users:</div>
+    <div id="status-message">Status:</div>
+
+    <div id="poll-container"></div>
+    <div id="vote-feedback"></div>
+
+    <div id="poll-results-title"><h3>Poll Results:</h3>
+    <div id="vote-count"></div>
+
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript"  src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/vote.js"></script>
+  </body>
+</html>
