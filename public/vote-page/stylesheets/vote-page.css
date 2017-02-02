@@ -63,19 +63,29 @@ button:hover {
   margin: 0px auto 10px 20px;
 }
 
+#poll-icon2 {
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  margin: 20px auto;
+}
+
 .poll-question, .deadline {
   text-align: center;
-  margin: 20px auto;
+  margin: 30px auto;
 
 }
 
 .poll-question {
   color: #e2e2e2;
   font-size: 2em;
+  /*margin: 30px auto 10px auto;*/
 }
 
 .deadline {
-  margin: 0px auto 20px auto;
+  margin: 30px auto 20px auto;
   text-align: center;
 }
 
