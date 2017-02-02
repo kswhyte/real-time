@@ -6,10 +6,14 @@ html {
   justify-content: center;
 }
 
-h1#app-title {
+.app-title {
   text-align: center;
   margin: 20px auto;
   font-size: 4em;
+  color: #4648f6;
+}
+
+.builder-span {
   color: #e2e2e2;
 }
 
@@ -45,25 +49,24 @@ input:invalid {
     border-color: red;
 }
 
-input,
-input:valid {
-    border-color: #ccc;
+input, input:valid {
+  border-color: #ccc;
 }
 
 ::-webkit-input-placeholder {
-   color: #000;
+   color: rgba(136, 136, 136, 0.7);
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #000;
+   color: rgba(136, 136, 136, 0.7);
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #000;
+   color: rgba(136, 136, 136, 0.7);
 }
 
 :-ms-input-placeholder {
-   color: #000;
+   color: rgba(136, 136, 136, 0.7);
 }
 
 #folder-input:hover {

@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <h1 id="app-title">Poll Builder</h1>
+    <h1 class="app-title">Poll<span class="builder-span">Builder</span></h1>
     <form id="poll-form" method="post">
       <label class="poll-input-label question-label">
         Create a Poll Question <br>
@@ -28,7 +28,7 @@
         <input class="input-field poll-option2" type="text" placeholder="Poll Response 2" title="Username should only contain lowercase letters. e.g. john">
         <input class="input-field poll-option3" type="text" placeholder="Poll Response 3" title="Username should only contain lowercase letters. e.g. john">
         <input class="input-field poll-option4" id="bottom-option" type="text" placeholder="Poll Response 4" title="Username should only contain lowercase letters. e.g. john">
-        <!--<input class="input-field poll-option" id="bottom-option" type="text" placeholder="Poll Response 4" pattern="[a-zA-z\s]{1,15}" title="Username should only contain lowercase letters. e.g. john">-->
+        <!--<input class="input-field poll-option" id="bottom-option" type="text" placeholder="Poll Response 4" pattern="^(?=.*[a-zA-Z\s\d].*)[a-zA-Z\d!@#$%&*]$" title="Username should only contain lowercase letters. e.g. john">-->
       </label>
 
       <button id"create-poll-button" type="submit">Create Poll</button>

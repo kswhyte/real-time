@@ -1,3 +1,11 @@
+html {
+  font-family: 'Arsenal', sans-serif;
+  background-color: #111111;
+  color: #fcdd55;
+  align-items: center;
+  justify-content: center;
+}
+
 .auth-container {
   display: flex;
   align-items: center;

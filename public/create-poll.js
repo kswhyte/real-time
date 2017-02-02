@@ -43,6 +43,11 @@ $('#poll-form').on('submit', (e) => {
     ]
   }
 
+  postPollData(pollData)
+  resetInputFields()
+})
+
+const postPollData = (pollData) => {
   $.post('/polls', pollData)
   .then(pollData => {
     pollData.forEach(poll => {
@@ -56,7 +61,17 @@ $('#poll-form').on('submit', (e) => {
       `)
     })
   })
-})
+}
+
+const resetInputFields = () => {
+  $('#poll-question').val('')
+  $('.poll-option1').val('')
+  $('.poll-option2').val('')
+  $('.poll-option3').val('')
+  $('.poll-option4').val('')
+  $('#time-picker').val('')
+  $('#date-picker').val('')
+}
 
   // fetch(`/polls`, {
   //     method: 'post',

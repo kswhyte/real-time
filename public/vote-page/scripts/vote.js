@@ -18,6 +18,7 @@ const getParameterByName = (name, url) => {
 const getCurrentPoll = (pollID) => {
   $.get(`/api/v1/polls/${pollID}`)
     .then(poll => {
+      console.log(poll.id)
       console.log('vote page POLL', poll)
 
       $('#poll-container').append(`
