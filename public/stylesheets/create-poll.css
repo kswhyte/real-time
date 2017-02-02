@@ -145,14 +145,22 @@ input#date-picker, input#time-picker {
   margin: 5px;
 }
 
-ul#poll-list {
+div#available-polls-title, ul#poll-list {
   text-align: center;
-  margin: 10px auto 20px auto;
+}
+
+div#available-polls-title {
   font-size: 1.5em;
+  margin: 10px auto 20px auto;
+}
+
+ul#poll-list {
+  margin: 10px auto;
 }
 
 a.poll-link {
-  margin: 20px auto;
+  font-size: 1.25em;
+  margin: 10px;
   outline-style: none;
   text-decoration: none;
   color: #e2e2e2;

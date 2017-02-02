@@ -5,24 +5,24 @@ const statusMessage = $('#status-message')
 const buttons = document.querySelectorAll('#choices button')
 const voteResults = $('#vote-count')
 
-// $(document).ready(() => {
-//   $.get('/api/v1/polls')
-//     .then(polls => {
-//       console.log('Doc ready POLLS', polls)
-//       if (!polls === []) {
-//         polls.forEach(poll => {
-//           console.log('Doc ready POLL 2', poll)
-//           $('#poll-list').append(`
-//             <li>
-//               <a href="/vote/?pollID=${poll.id}">
-//                 ${poll.question}
-//               </a>
-//             </li>
-//           `)
-//         })
-//       }
-//     })
-// })
+$(document).ready(() => {
+  $.get('/api/v1/polls')
+    .then(polls => {
+      console.log('Doc ready POLLS', polls)
+      if (polls.length > 0) {
+        polls.forEach(poll => {
+          console.log('Doc ready POLL 2', poll)
+          $('#poll-list').append(`
+            <li>
+              <a class="poll-link" href="/vote/?pollID=${poll.id}">
+                ${poll.question}
+              </a>
+            </li>
+          `)
+        })
+      }
+    })
+})
 
 $('#poll-form').on('submit', (e) => {
   e.preventDefault()
@@ -51,7 +51,7 @@ const postPollData = (pollData) => {
   $.post('/polls', pollData)
   .then(pollData => {
     pollData.forEach(poll => {
-      $('#poll-list').text('Choose an Available Poll:')
+      // $('#poll-list').text('Choose an Available Poll:')
       $('#poll-list').append(`
         <li>
           <a class="poll-link" href="/vote/?pollID=${poll.id}">
@@ -72,24 +72,6 @@ const resetInputFields = () => {
   $('#time-picker').val('')
   $('#date-picker').val('')
 }
-
-  // fetch(`/polls`, {
-  //     method: 'post',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //       poll: pollData
-  //     })
-  //   }).then(res => {
-  //     console.log('RES', res)
-  //     return res.json()
-  //   }).then(json => {
-  //     return window.location = `/polls/?pollID=${json.id}`
-  //   })
-  // })
-
 
 socket.on('usersConnected', (count) => {
   connectedUsers.innerText = 'Connected Users: ' + count

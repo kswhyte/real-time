@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>Real Time | Create a Poll</title>
-    <link href="https://fonts.googleapis.com/css?family=Arsenal|Lato|Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/reset.css">
-    <link rel="stylesheet" href="/stylesheets/create-poll.css">
+    <link href='https://fonts.googleapis.com/css?family=Arsenal|Lato|Open+Sans' rel='stylesheet'>
+    <link rel='stylesheet' href='/stylesheets/reset.css'>
+    <link rel='stylesheet' href='/stylesheets/create-poll.css'>
   </head>
 
   <body>
-    <h1 class="app-title">Poll<span class="builder-span">Builder</span></h1>
-    <form id="poll-form" method="post">
-      <label class="poll-input-label question-label">
+    <h1 class='app-title'>Poll<span class='builder-span'>Builder</span></h1>
+    <form id='poll-form' method='post'>
+      <label class='poll-input-label question-label'>
         Create a Poll Question <br>
         <input
-          class="input-field"
-          id="poll-question"
-          type="text"
-          name="question"
-          placeholder="What would you like to know?"
-          title="Username should only contain lowercase letters. e.g. john"
+          class='input-field'
+          id='poll-question'
+          type='text'
+          name='question'
+          placeholder='What would you like to know?'
+          title='Username should only contain lowercase letters. e.g. john'
         >
       </label>
-      <label class="poll-input-label options-container">
+      <label class='poll-input-label options-container'>
         What options would you like your audience to choose from? <br>
-        <input class="input-field poll-option1" type="text" placeholder="Poll Response 1" title="Username should only contain lowercase letters. e.g. john">
-        <input class="input-field poll-option2" type="text" placeholder="Poll Response 2" title="Username should only contain lowercase letters. e.g. john">
-        <input class="input-field poll-option3" type="text" placeholder="Poll Response 3" title="Username should only contain lowercase letters. e.g. john">
-        <input class="input-field poll-option4" id="bottom-option" type="text" placeholder="Poll Response 4" title="Username should only contain lowercase letters. e.g. john">
-        <!--<input class="input-field poll-option" id="bottom-option" type="text" placeholder="Poll Response 4" pattern="^(?=.*[a-zA-Z\s\d].*)[a-zA-Z\d!@#$%&*]$" title="Username should only contain lowercase letters. e.g. john">-->
+        <input class='input-field poll-option1' type='text' placeholder='Poll Response 1' title='Username should only contain lowercase letters. e.g. john'>
+        <input class='input-field poll-option2' type='text' placeholder='Poll Response 2' title='Username should only contain lowercase letters. e.g. john'>
+        <input class='input-field poll-option3' type='text' placeholder='Poll Response 3' title='Username should only contain lowercase letters. e.g. john'>
+        <input class='input-field poll-option4' id='bottom-option' type='text' placeholder='Poll Response 4' title='Username should only contain lowercase letters. e.g. john'>
+        <!--<input class='input-field poll-option' id='bottom-option' type='text' placeholder='Poll Response 4' pattern='^(?=.*[a-zA-Z\s\d].*)[a-zA-Z\d!@#$%&*]$' title='Username should only contain lowercase letters. e.g. john'>-->
       </label>
 
-      <button id"create-poll-button" type="submit">Create Poll</button>
+      <button id'create-poll-button' type='submit'>Create Poll</button>
 
-      <div class="deadline-container">
-        <label class="poll-input-label date-label">
+      <div class='deadline-container'>
+        <label class='poll-input-label date-label'>
           This poll ends on... <br>
-          <input class="input-field" id="date-picker" type="date">
+          <input class='input-field' id='date-picker' type='date'>
         </label>
-        <label class="poll-input-label time-label">
+        <label class='poll-input-label time-label'>
           ...AND ends at... <br>
-          <input class="input-field" id="time-picker" type="time">
+          <input class='input-field' id='time-picker' type='time'>
         </label>
       </div>
     </form>
 
-    <ul id="poll-list">No Available Polls</ul>
+    <div id='available-polls-title'>Available Polls:</div>
+    <ul id='poll-list'></ul>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="/create-poll.js"></script>
-    <!--<script src="https://cdn.auth0.com/js/lock/10.9.1/lock.min.js"></script>
-    <script src="https://cdn.auth0.com/w2/auth0-7.6.1.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script type='text/javascript' src='/socket.io/socket.io.js'></script>
+    <script type='text/javascript' src='/create-poll.js'></script>
+    <!--<script src='https://cdn.auth0.com/js/lock/10.9.1/lock.min.js'></script>
+    <script src='https://cdn.auth0.com/w2/auth0-7.6.1.min.js'></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />-->
   </body>
 </html>
