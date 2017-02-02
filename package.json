@@ -1,0 +1,44 @@
+{
+  "name": "real-time",
+  "version": "1.0.0",
+  "description": "A rich web application that leverages WebSockets to push data to connected clients in real time",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kswhyte/real-time.git"
+  },
+  "keywords": [
+    "real",
+    "time"
+  ],
+  "author": "Kinan Whyte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kswhyte/real-time/issues"
+  },
+  "homepage": "https://github.com/kswhyte/real-time#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "es6-promise": "^4.0.5",
+    "bootstrap-datepicker": "^1.6.4",
+    "connect-ensure-login": "^0.1.1",
+    "express": "^4.14.1",
+    "http": "0.0.0",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.4",
+    "md5": "^2.2.1",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.6.0",
+    "socket.io": "^1.7.2",
+    "socketio-jwt": "^4.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
+  }
+}
