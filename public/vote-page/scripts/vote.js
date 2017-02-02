@@ -18,6 +18,7 @@ const getParameterByName = (name, url) => {
 const getCurrentPoll = (pollID) => {
   $.get(`/api/v1/polls/${pollID}`)
     .then(poll => {
+      const pollID = poll.id
       console.log(poll.id)
       console.log('vote page POLL', poll)
 
@@ -29,11 +30,17 @@ const getCurrentPoll = (pollID) => {
           This poll ends on <span id="ending-date">poll.deadlines[1]endingDate</span> at <span id="ending-time">poll.deadlines[0].endingTime</span>
         </h3>
         <div id="options">
-          <button>${poll.pollOptions[0].pollData}</button>
-          <button>${poll.pollOptions[1].pollData}</button>
-          <button>${poll.pollOptions[2].pollData}</button>
-          <button>${poll.pollOptions[3].pollData}</button>
+          <button class="poll-option-button>${poll.pollOptions[0].pollData}</button>
+          <button class="poll-option-button>${poll.pollOptions[1].pollData}</button>
+          <button class="poll-option-button>${poll.pollOptions[2].pollData}</button>
+          <button class="poll-option-button>${poll.pollOptions[3].pollData}</button>
         </div>
       `)
     })
 }
+
+$('.btn-logout').on('click', () => {
+  localStorage.removeItem('id_token')
+  localStorage.removeItem('profile')
+  window.location.reload()
+})

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   var lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {
     auth: {
       params: { scope: 'openid email' } //Details: https://auth0.com/docs/scopes
@@ -22,7 +22,10 @@ $(document).ready(function() {
         // Handle error
         return;
       }
+      console.log('authResult', authResult)
+      console.log('profile', profile)
       localStorage.setItem('id_token', authResult.idToken);
+      localStorage.setItem('profile', profile);
       // Display user information
       show_profile_info(profile);
     });

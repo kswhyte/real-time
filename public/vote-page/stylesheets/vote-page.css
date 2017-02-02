@@ -6,10 +6,24 @@ html {
   justify-content: center;
 }
 
+img.avatar {
+  width: 75px;
+  height: 75px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+.welcome-title {
+  margin-left: 15px;
+  font-size: 1.5em;
+  color: #4648f6;
+}
+
 .auth-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 20px auto 30px auto;
 }
 
 input:not([type=submit]):not([type=file]) {
@@ -19,7 +33,6 @@ input:not([type=submit]):not([type=file]) {
 
 button {
   font-family: 'Arsenal', sans-serif;
-  margin: 15px auto;
   width: 100px;
   padding: 4px 10px 5px 10px;
   display: block;
@@ -28,7 +41,7 @@ button {
   text-align: center;
   font-size: 16px;
   border-radius: 3px;
-  background-color: #670000;
+  background-color: #4b4b4b;
   color: #fff;
 }
 
@@ -36,4 +49,16 @@ button:hover {
   cursor: pointer;
   background-color: #f15151;
   color: #000;
+}
+
+.btn-login, .btn-logout {
+  margin: 0px 30px 0px 0px;
+}
+
+.live-update-feedback {
+  margin: 0px auto 10px 20px;
+}
+
+.poll-option-button {
+  /*margin: 15px auto;*/
 }

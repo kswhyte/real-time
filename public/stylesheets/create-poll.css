@@ -103,7 +103,7 @@ button {
   text-align: center;
   font-size: 16px;
   border-radius: 3px;
-  background-color: #670000;
+  background-color: #4b4b4b;
   color: #fff;
 }
 
@@ -112,7 +112,6 @@ button:hover {
   background-color: #f15151;
   color: #000;
 }
-
 
 .poll-option {
   margin: 0px auto;

@@ -28,6 +28,10 @@ app.locals.pollForms = []
 // app.use('/polls', express.static(path.join(__dirname, '/public/create-poll.html')));
 // app.use('/polls/:id', express.static(path.join(__dirname, '/public/vote-page.html')));
 
+app.get('/', (req, res) => {
+  res.redirect('/polls')
+})
+
 app.get('/polls', (req, res) => {
   res.sendFile(__dirname + '/public/create-poll.html')
 })
