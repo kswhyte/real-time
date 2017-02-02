@@ -28,15 +28,13 @@ const renderCurrentPoll = (poll) => {
     <h1 class='poll-question'>
       ${poll.question}
     </h1>
-    <h3 class='deadline'>
-      This poll ends on <span id='ending-date'>poll.deadlines[1]endingDate</span> at <span id='ending-time'>poll.deadlines[0].endingTime</span>
-    </h3>
     <div class='options'>
-      <button class='poll-option-button>${poll.pollOptions[0].pollData}</button>
-      <button class='poll-option-button>${poll.pollOptions[1].pollData}</button>
-      <button class='poll-option-button>${poll.pollOptions[2].pollData}</button>
-      <button class='poll-option-button>${poll.pollOptions[3].pollData}</button>
+      <button class='poll-option-button'>${poll.pollOptions[0].pollData}</button>
+      <button class='poll-option-button'>${poll.pollOptions[1].pollData}</button>
+      <button class='poll-option-button'>${poll.pollOptions[2].pollData}</button>
+      <button class='poll-option-button'>${poll.pollOptions[3].pollData}</button>
     </div>
+    <h3 class='deadline'>This poll ends on <span id='ending-date'>${poll.deadlines[1].endingDate}</span> at <span id='ending-time'>${poll.deadlines[0].endingTime}</span></h3>
   `)
   if (!profileActive) {
     $('#poll-container').hide()

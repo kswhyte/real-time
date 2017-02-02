@@ -13,6 +13,15 @@ html {
   color: #4648f6;
 }
 
+#poll-icon {
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  margin: 20px auto;
+}
+
 .builder-span {
   color: #e2e2e2;
 }
@@ -46,7 +55,7 @@ html {
 }
 
 input:invalid {
-    border-color: red;
+    border-color: #c80000;
 }
 
 input, input:valid {
@@ -123,7 +132,7 @@ button:hover {
 
 #create-poll-button {
   margin: 5px;
-  color: red;
+  color: #c80000;
 }
 
 #poll-question {
@@ -155,7 +164,7 @@ div#available-polls-title {
 }
 
 ul#poll-list {
-  margin: 10px auto;
+  margin: 10px auto 50px auto;
 }
 
 a.poll-link {
@@ -171,7 +180,7 @@ a.poll-link {
 }
 
 #connection-count {
-  /*color: red;*/
+  /*color: #c80000;*/
 }
 
 /*----------*/

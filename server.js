@@ -12,6 +12,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 const port = process.env.PORT || 3000;
 const server = http.createServer(app)
 
+const socketIO = require('socket.io')
+const io = socketIO(server)
+
+const votes = {}
+
 server.listen(port, () => {
   console.log(`Listening on port ${port}.`)
 })
@@ -24,10 +29,6 @@ app.locals.pollForms = []
 // let jwt = require('express-jwt');
 // app.use(expressJWT({ secret: 'i am a banana'}).unless({ path: ['/login', '/cats']}))
 
-//alternative use to app.get...
-// app.use('/polls', express.static(path.join(__dirname, '/public/create-poll.html')));
-// app.use('/polls/:id', express.static(path.join(__dirname, '/public/vote-page.html')));
-
 app.get('/', (req, res) => {
   res.redirect('/polls')
 })
@@ -37,15 +38,10 @@ app.get('/polls', (req, res) => {
 })
 
 app.post('/polls', (req, res) => {
-  // console.log('req1', req)
   const poll = req.body
   poll['id'] = md5(poll)
 
-  // const id = md5(poll)
-  // const currentPoll = { id, poll }
-
   app.locals.pollForms.push(poll)
-  // app.locals.pollForms.push(currentPoll)
   res.send(app.locals.pollForms)
 })
 
@@ -65,13 +61,6 @@ app.get('/api/v1/polls/:id', (req, res) => {
   })
   res.send(poll)
 })
-
-// ____________
-
-const socketIO = require('socket.io')
-const io = socketIO(server)
-
-const votes = {}
 
 io.on('connection', (socket) => {
   console.log('A user has connected.', io.engine.clientsCount);

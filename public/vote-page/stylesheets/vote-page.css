@@ -80,7 +80,27 @@ button:hover {
 }
 
 .options {
+  text-align: center;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*flex-direction: column;*/
+}
 
+.poll-option-button {
+  margin: 10px;
+  /*width: 100px;
+  height: 16px;*/
+}
+
+.deadline {
+  color: #f15151;
+}
+
+#poll-results-text {
+  margin-top: 30px;
+  color: #c80000;
 }
 
 
