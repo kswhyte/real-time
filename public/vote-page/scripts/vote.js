@@ -101,7 +101,7 @@ socket.on('statusMessage', (message) => {
 socket.on('voteCount', (voteResults) => {
   $('.user-profile-img').remove()
   voteResults.forEach((userSelection) => {
-    $(`#option${userSelection.optionID}`).after(
+    $(`#option${userSelection.optionID}`).append(
       `<img class='user-profile-img' src='${userSelection.profileImg}'>`
     )
   })
