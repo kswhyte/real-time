@@ -9,7 +9,7 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 const server = http.createServer(app)
 
 const socketIO = require('socket.io')
@@ -23,11 +23,7 @@ server.listen(port, () => {
 
 app.locals.title = 'Real Time'
 app.locals.pollForms = []
-
-// const expressJWT = require('express-jwt')
-// const jwt = require('jsonwebtoken')
-// let jwt = require('express-jwt');
-// app.use(expressJWT({ secret: 'i am a banana'}).unless({ path: ['/login', '/cats']}))
+app.locals.voteResults = []
 
 app.get('/', (req, res) => {
   res.redirect('/polls')
@@ -55,87 +51,39 @@ app.get('/api/v1/polls', (req, res) => {
 })
 
 app.get('/api/v1/polls/:id', (req, res) => {
-  console.log('POLLFORMS', app.locals.pollForms)
   let poll = app.locals.pollForms.find(poll => {
     return poll.id === req.params.id
   })
   res.send(poll)
 })
 
+
 io.on('connection', (socket) => {
-  console.log('A user has connected.', io.engine.clientsCount);
+  console.log('A user has connected.', io.engine.clientsCount)
+  io.sockets.emit('usersConnected', io.engine.clientsCount)
 
-  io.sockets.emit('usersConnected', io.engine.clientsCount);
-  socket.emit('statusMessage', 'You have connected.');
+  socket.emit('statusMessage', 'You have connected.')
 
-  socket.on('message', (channel, message) => {
-    if (channel === 'voteCast') {
-      votes[socket.id] = message;
-      socket.emit('voteCount', countVotes(votes));
-    }
-  });
+  socket.on('voteCast', (optionID, profileImg) => {
+    updateVoteResults(profileImg)
+    app.locals.voteResults.push({
+      optionID,
+      profileImg
+    })
+    socket.emit('voteCount', app.locals.voteResults)
+  })
 
   socket.on('disconnect', () => {
-    console.log('A user has disconnected.', io.engine.clientsCount);
+    console.log('A user has disconnected.', io.engine.clientsCount)
+    delete votes[socket.id]
+    io.sockets.emit('usersConnected', io.engine.clientsCount)
+  })
+})
 
-    delete votes[socket.id];
-
-    socket.emit('voteCount', countVotes(votes));
-    io.sockets.emit('usersConnected', io.engine.clientsCount);
-  });
-});
-
-const countVotes = (votes) => {
-  const voteCount = {
-      A: 0,
-      B: 0,
-      C: 0,
-      D: 0
-  };
-
-  for (let vote in votes) {
-    voteCount[votes[vote]]++
-  }
-  return voteCount;
+const updateVoteResults = (profileImg) => {
+  app.locals.voteResults = app.locals.voteResults.filter(option => {
+    return profileImg !== option.profileImg
+  })
 }
 
-module.exports = server;
-
-
-
-// let authenticate = jwt({
-//   secret: new Buffer(process.env.AUTH0_SECRET, 'base64'),
-//   audience: process.env.AUTH0_CLIENT_ID
-// });
-
-// var socket = io();
-// socket.on('connect', function () {
-// socket.on('authenticated', function () {
-// //Do
-//
-// })
-// .emit('authenticate', {token: userToken}); // send the jwt
-// });
-
-
-
-
-// -----------------------------
-// //Header for JWT
-// {
-//   'typ': 'JWT', //set to jwt
-//   'alg': 'HS246' //whatever algorithm sender used to encrypt that JWT
-// }
-//
-// //payload JSON object
-// {
-//   'iss': 'http://myapi.com', //issuer: reserved claim
-//   'user': 'nodebotanist', //username: public claim
-// }
-//
-// //signature
-// HMACHA235(
-//   base64UrlEncode(header) + "." + //ensures message hasn't changed
-//   base64UrlEncode(payload),
-//   secret
-// )
+module.exports = server

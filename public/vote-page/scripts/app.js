@@ -25,7 +25,7 @@ $(document).ready(function() {
         return
       }
       localStorage.setItem('id_token', authResult.idToken)
-      localStorage.setItem('profile', profile)
+      localStorage.setItem('profileImg', profile.picture)
 
       show_profile_info(profile)
       profileActive = profile

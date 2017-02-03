@@ -7,8 +7,8 @@ html {
 }
 
 img.avatar {
-  width: 75px;
-  height: 75px;
+  width: 80px;
+  height: 80px;
   margin-left: 20px;
   border-radius: 10px;
 }
@@ -75,13 +75,11 @@ button:hover {
 .poll-question, .deadline {
   text-align: center;
   margin: 30px auto;
-
 }
 
 .poll-question {
   color: #e2e2e2;
   font-size: 2em;
-  /*margin: 30px auto 10px auto;*/
 }
 
 .deadline {
@@ -95,13 +93,19 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  /*flex-direction: column;*/
+  flex-direction: column;
 }
 
 .poll-option-button {
   margin: 10px;
-  /*width: 100px;
-  height: 16px;*/
+  width: 100px;
+}
+
+img.user-profile-img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 5px;
 }
 
 .deadline {
@@ -111,9 +115,4 @@ button:hover {
 #poll-results-text {
   margin-top: 30px;
   color: #c80000;
-}
-
-
-.poll-option-button {
-  /*margin: 15px auto;*/
 }
