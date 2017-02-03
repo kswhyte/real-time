@@ -22,6 +22,13 @@ html {
   margin: 20px auto;
 }
 
+.options-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .builder-span {
   color: #e2e2e2;
 }
@@ -136,14 +143,16 @@ button:hover {
 }
 
 #poll-question {
-  width: 300px;
-  margin: 10px auto;
+  max-width: 300px;
+  margin: 10px 20px;
+  text-align: center;
 }
 
 .deadline-container {
   display: flex;
   align-items: space-around;
   justify-content: space-around;
+  flex-direction: column;
 }
 
 .poll-option1, .poll-option2, .poll-option3, .poll-option4 {
@@ -164,12 +173,12 @@ div#available-polls-title {
 }
 
 ul#poll-list {
-  margin: 10px auto;
+  margin: 10px auto 50px auto;
 }
 
 a.poll-link {
   font-size: 1.25em;
-  margin: 10px;
+  margin: 30px;
   outline-style: none;
   text-decoration: none;
   color: #e2e2e2;
@@ -178,12 +187,6 @@ a.poll-link {
 .poll-link:hover {
   color: #4648f6;
 }
-
-#connection-count {
-  /*color: #c80000;*/
-}
-
-/*----------*/
 
 #root {
   width: 280px;

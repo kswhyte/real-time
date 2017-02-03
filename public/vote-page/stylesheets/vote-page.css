@@ -81,7 +81,6 @@ button:hover {
 .poll-question {
   color: #e2e2e2;
   font-size: 2em;
-  /*margin: 30px auto 10px auto;*/
 }
 
 .deadline {
@@ -95,13 +94,19 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  /*flex-direction: column;*/
+  flex-direction: column;
 }
 
 .poll-option-button {
   margin: 10px;
-  /*width: 100px;
-  height: 16px;*/
+  width: 100px;
+}
+
+img.user-profile-img {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border-radius: 10px;
 }
 
 .deadline {
