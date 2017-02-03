@@ -8,10 +8,8 @@ const voteResults = $('#vote-count')
 $(document).ready(() => {
   $.get('/api/v1/polls')
     .then(polls => {
-      console.log('Doc ready POLLS', polls)
       if (polls.length > 0) {
         polls.forEach(poll => {
-          console.log('Doc ready POLL 2', poll)
           $('#poll-list').append(`
             <li>
               <a class="poll-link" href="/vote/?pollID=${poll.id}">
@@ -72,27 +70,3 @@ const resetInputFields = () => {
   $('#time-picker').val('')
   $('#date-picker').val('')
 }
-
-socket.on('usersConnected', (count) => {
-  connectedUsers.innerText = 'Connected Users: ' + count
-})
-
-socket.on('statusMessage', (message) => {
-  statusMessage.innerText = message
-})
-
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', function() {
-    socket.send('voteCast', this.innerText)
-  })
-}
-
-socket.on('voteCount', (votes) => {
-  console.log('votes', votes)
-  voteResults.innerText = (`Votes Counted:
-    A: ${votes.A}
-    B: ${votes.B}
-    C: ${votes.C}
-    D: ${votes.D}
-    `)
-})
