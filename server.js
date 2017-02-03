@@ -34,7 +34,6 @@ app.get('/polls', (req, res) => {
 })
 
 app.post('/polls', (req, res) => {
-  console.log('req.body', req.body)
   const poll = req.body
   poll['id'] = md5(poll.id)
 

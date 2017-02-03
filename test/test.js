@@ -33,12 +33,18 @@ describe('GET Route(s)', () => {
       .get('/api/v1/polls/:id')
       .expect(200, done)
   })
+  it('/api/v1/vote_results -- responds with success', (done) => {
+    request(app)
+      .get('/api/v1/vote_results')
+      .expect(200, done)
+  })
 })
 
 describe('POST Route(s)', () => {
   it('responds with success', (done) => {
     request(app)
       .post('/polls')
+      .send({id: '34343422'})
       .expect(200, done)
   })
 })
