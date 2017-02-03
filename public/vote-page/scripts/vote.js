@@ -60,28 +60,23 @@ const renderCurrentPoll = (poll) => {
   $('#poll-container').on('click', '#option1', (e) => {
     let optionID = e.target.classList[1]
     let profileImg = localStorage.getItem('profileImg')
-    console.log("PROFIMG", profileImg)
     socket.emit('voteCast', optionID, profileImg)
   })
   $('#poll-container').on('click', '#option2', (e) => {
     let optionID = e.target.classList[1]
     let profileImg = localStorage.getItem('profileImg')
-    console.log("PROFIMG", profileImg)
     socket.emit('voteCast', optionID, profileImg)
   })
   $('#poll-container').on('click', '#option3', (e) => {
     let optionID = e.target.classList[1]
     let profileImg = localStorage.getItem('profileImg')
-    console.log("PROFIMG", profileImg)
     socket.emit('voteCast', optionID, profileImg)
   })
   $('#poll-container').on('click', '#option4', (e) => {
     let optionID = e.target.classList[1]
     let profileImg = localStorage.getItem('profileImg')
-    console.log("PROFIMG", profileImg)
     socket.emit('voteCast', optionID, profileImg)
   })
-  //button event listeners, socket.emit(id, img)
 }
 
 $('.btn-home').on('click', () => {
@@ -94,10 +89,6 @@ $('.btn-logout').on('click', () => {
   window.location.reload()
 })
 
-// $('#poll-container').on('click', '#option1', () => {
-//   console.log('text', $('#option1').text())
-// })
-
 socket.on('usersConnected', (count) => {
   connectedUsers.text('Connected Users: ' + count)
 })
@@ -105,24 +96,6 @@ socket.on('usersConnected', (count) => {
 socket.on('statusMessage', (message) => {
   statusMessage.text(message)
 })
-
-// socket.emit('voteCast', (profImg) => {
-//   const profImg = localStorage.getItem(profileImg)
-//   // statusMessage.text(message)
-// })
-
-
-// for (let i = 0; i < buttons.length; i++) {
-//   buttons[i].addEventListener('click', function() {
-//     socket.emit('voteCast', this.innerText);
-//   });
-// }
-
-// for (let i = 0; i < buttons.length; i++) {
-//   buttons[i].on('click', () => {
-//     socket.send('voteCast', this.text())
-//   })
-// }
 
 socket.on('voteCount', (voteResults) => {
   $('.user-profile-img').remove()
@@ -132,15 +105,3 @@ socket.on('voteCount', (voteResults) => {
     )
   })
 })
-  // getProfileImgs(voteResults)
-  // console.log('voteResults', voteResults)
-
-  // voteResults.text = (`Votes Counted:
-  //   ${pollButton1.text()}: ${votes.option1}
-  //   ${pollButton2.text()}: ${votes.option2}
-  //   ${pollButton3.text()}: ${votes.option3}
-  //   ${pollButton4.text()}: ${votes.option4}
-  // `)
-
-// const getProfileImgs = (voteResults) => {
-// }

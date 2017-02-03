@@ -65,11 +65,11 @@ io.on('connection', (socket) => {
   socket.emit('statusMessage', 'You have connected.')
 
   socket.on('voteCast', (optionID, profileImg) => {
+    updateVoteResults(profileImg)
     app.locals.voteResults.push({
       optionID,
       profileImg
     })
-    updateVoteResults(optionID)
     socket.emit('voteCount', app.locals.voteResults)
   })
 
@@ -80,11 +80,9 @@ io.on('connection', (socket) => {
   })
 })
 
-const updateVoteResults = (optionID) => {
-  let voteResults = app.locals.voteResults
-  voteResults = voteResults.filter(option => {
-    console.log('optionNNNNN', option)
-    return option.optionID !== optionID
+const updateVoteResults = (profileImg) => {
+  app.locals.voteResults = app.locals.voteResults.filter(option => {
+    return profileImg !== option.profileImg
   })
 }
 
