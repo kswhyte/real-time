@@ -35,7 +35,15 @@ const getCurrentPoll = (pollID) => {
 }
 
 const renderProfileImgs = () => {
-
+  $.get('/api/v1/vote_results')
+    .then(results => {
+      console.log('results', results)
+      results.forEach((userSelection) => {
+        $(`#option${userSelection.optionID}`).append(
+          `<img class='user-profile-img' src='${userSelection.profileImg}'>`
+        )
+      })
+    })
 }
 
 const renderCurrentPoll = (poll) => {

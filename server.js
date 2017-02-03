@@ -58,6 +58,11 @@ app.get('/api/v1/polls/:id', (req, res) => {
   res.send(poll)
 })
 
+app.get('/api/v1/vote_results', (req, res) => {
+  let userProfiles = app.locals.voteResults
+  res.send(userProfiles)
+})
+
 
 io.on('connection', (socket) => {
   console.log('A user has connected.', io.engine.clientsCount)
