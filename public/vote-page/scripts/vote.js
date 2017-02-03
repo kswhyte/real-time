@@ -2,7 +2,6 @@ const socket = io();
 
 const connectedUsers = $('#connected-users-count')
 const statusMessage = $('#status-message')
-const voteResults = $('#vote-count')
 const buttons = document.querySelectorAll('.options button');
 
 let pollButton1 = $('#option1')
@@ -36,7 +35,15 @@ const getCurrentPoll = (pollID) => {
 }
 
 const renderProfileImgs = () => {
-
+  $.get('/api/v1/vote_results')
+    .then(results => {
+      console.log('results', results)
+      results.forEach((userSelection) => {
+        $(`#option${userSelection.optionID}`).append(
+          `<img class='user-profile-img' src='${userSelection.profileImg}'>`
+        )
+      })
+    })
 }
 
 const renderCurrentPoll = (poll) => {
@@ -57,27 +64,6 @@ const renderCurrentPoll = (poll) => {
     $('#poll-container').hide()
   }
   const voteResults = []
-
-  $('#option1').on('click', (e) => {
-    let optionID = e.target.classList[1]
-    let profileImg = localStorage.getItem('profileImg')
-    socket.emit('voteCast', optionID, profileImg)
-  })
-  $('#option2').on('click', (e) => {
-    let optionID = e.target.classList[1]
-    let profileImg = localStorage.getItem('profileImg')
-    socket.emit('voteCast', optionID, profileImg)
-  })
-  $('#option3').on('click', (e) => {
-    let optionID = e.target.classList[1]
-    let profileImg = localStorage.getItem('profileImg')
-    socket.emit('voteCast', optionID, profileImg)
-  })
-  $('#option4').on('click', (e) => {
-    let optionID = e.target.classList[1]
-    let profileImg = localStorage.getItem('profileImg')
-    socket.emit('voteCast', optionID, profileImg)
-  })
 }
 
 $('.btn-home').on('click', () => {
@@ -88,6 +74,30 @@ $('.btn-logout').on('click', () => {
   localStorage.removeItem('id_token')
   localStorage.removeItem('profile')
   window.location.reload()
+})
+
+$('#option1').on('click', (e) => {
+  let optionID = e.target.classList[1]
+  let profileImg = localStorage.getItem('profileImg')
+  socket.emit('voteCast', optionID, profileImg)
+})
+
+$('#option2').on('click', (e) => {
+  let optionID = e.target.classList[1]
+  let profileImg = localStorage.getItem('profileImg')
+  socket.emit('voteCast', optionID, profileImg)
+})
+
+$('#option3').on('click', (e) => {
+  let optionID = e.target.classList[1]
+  let profileImg = localStorage.getItem('profileImg')
+  socket.emit('voteCast', optionID, profileImg)
+})
+
+$('#option4').on('click', (e) => {
+  let optionID = e.target.classList[1]
+  let profileImg = localStorage.getItem('profileImg')
+  socket.emit('voteCast', optionID, profileImg)
 })
 
 socket.on('usersConnected', (count) => {

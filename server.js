@@ -34,8 +34,9 @@ app.get('/polls', (req, res) => {
 })
 
 app.post('/polls', (req, res) => {
+  console.log('req.body', req.body)
   const poll = req.body
-  poll['id'] = md5(poll)
+  poll['id'] = md5(poll.id)
 
   app.locals.pollForms.push(poll)
   res.send(app.locals.pollForms)
@@ -55,6 +56,11 @@ app.get('/api/v1/polls/:id', (req, res) => {
     return poll.id === req.params.id
   })
   res.send(poll)
+})
+
+app.get('/api/v1/vote_results', (req, res) => {
+  let userProfiles = app.locals.voteResults
+  res.send(userProfiles)
 })
 
 
