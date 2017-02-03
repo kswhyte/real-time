@@ -70,7 +70,7 @@ io.on('connection', (socket) => {
       optionID,
       profileImg
     })
-    socket.emit('voteCount', app.locals.voteResults)
+    io.sockets.emit('voteCount', app.locals.voteResults)
   })
 
   socket.on('disconnect', () => {
