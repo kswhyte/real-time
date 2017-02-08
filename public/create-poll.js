@@ -16,6 +16,9 @@ $(document).ready(() => {
                 ${poll.question}
               </a>
             </li>
+            <li class="poll-deadline">
+              Ends on ${poll.deadlines[1].endingDate} at ${poll.deadlines[0].endingTime}
+            </li>
           `)
         })
       }
