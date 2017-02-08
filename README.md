@@ -14,9 +14,9 @@ WebSockets are used to broadcast poll results to the client.
 jQuery is used for all updating and DOM manipulations.
 WebSockets are used to broadcast a user's vote to the server
 
-<img width="719" alt="screen shot 2017-02-03 at 2 59 49 am" src="https://cloud.githubusercontent.com/assets/13802107/22587142/a90112d6-e9bd-11e6-9811-68d4449f3c6f.png">
+<img align="center" width="719" alt="screen shot 2017-02-03 at 2 59 49 am" src="https://cloud.githubusercontent.com/assets/13802107/22587142/a90112d6-e9bd-11e6-9811-68d4449f3c6f.png">
 
-<img width="718" alt="screen shot 2017-02-03 at 2 59 31 am" src="https://cloud.githubusercontent.com/assets/13802107/22587115/83337454-e9bd-11e6-8938-71214e31df44.png">
+<img align="center" width="718" alt="screen shot 2017-02-03 at 2 59 31 am" src="https://cloud.githubusercontent.com/assets/13802107/22587115/83337454-e9bd-11e6-8938-71214e31df44.png">
 
 [Original Assignment](http://frontend.turing.io/projects/real-time.html)
 
