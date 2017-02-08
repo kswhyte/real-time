@@ -21,3 +21,10 @@ WebSockets are used to broadcast a user's vote to the server
 [Original Assignment](http://frontend.turing.io/projects/real-time.html)
 
 [Live Version](https://poll-bui1der.herokuapp.com/polls)
+
+###DEV:
+
+1. Pull this repository down with ```git clone```.
+2. ```npm install```
+3. ```node server.js```
+4. visit http://localhost:3000
