@@ -22,8 +22,8 @@
       <button type='submit' class='btn-logout' style='display:none;'>Sign Out</button>
     </div>
 
-    <div class='live-update-feedback' id='connected-users-count'>Connected Users:</div>
     <div class='live-update-feedback' id='status-message'>Status:</div>
+    <div class='live-update-feedback' id='connected-users-count'>Connected Users:</div>
 
     <img alt='poll-interface' id='poll-icon2' src='/icons/interface.svg'/>
 
@@ -34,7 +34,10 @@
       <div id='option3'></div>
       <div id='option4'></div>
     </div>
-    <div class="deadline-container"></div>
+    <div class="deadline-container">
+      <div class="ending-date"></div>
+      <div class="ending-time"></div>
+    </div>
 
     <script type='text/javascript' src='/socket.io/socket.io.js'></script>
     <script type='text/javascript' src='/vote-page/scripts/app.js'></script>

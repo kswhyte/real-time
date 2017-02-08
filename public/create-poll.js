@@ -41,6 +41,7 @@ $('#poll-form').on('submit', (e) => {
     ]
   }
 
+
   postPollData(pollData)
   resetInputFields()
 })
@@ -49,13 +50,16 @@ const postPollData = (pollData) => {
   $.post('/polls', pollData)
   .then(pollData => {
     pollData.forEach(poll => {
-      // $('#poll-list').text('Choose an Available Poll:')
+      console.log('POLLLL', poll)
       $('#poll-list').append(`
         <li>
           <a class="poll-link" href="/vote/?pollID=${poll.id}">
           ${poll.question}
-        </a>
-      </li>
+          </a>
+        </li>
+        <li class="poll-deadline">
+          Ends on ${poll.deadlines[1].endingDate} at ${poll.deadlines[0].endingTime}
+        </li>
       `)
     })
   })

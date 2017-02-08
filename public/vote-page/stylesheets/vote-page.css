@@ -72,19 +72,11 @@ button:hover {
   margin: 20px auto;
 }
 
-.poll-question, .deadline {
+.poll-question {
   text-align: center;
   margin: 30px auto;
-}
-
-.poll-question {
   color: #e2e2e2;
   font-size: 2em;
-}
-
-.deadline {
-  margin: 30px auto 20px auto;
-  text-align: center;
 }
 
 .options {
@@ -108,11 +100,36 @@ img.user-profile-img {
   border-radius: 5px;
 }
 
-.deadline {
+.ending-date, .ending-time {
   color: #f15151;
+  margin: 0px auto;
+  text-align: center;
 }
 
 #poll-results-text {
   margin-top: 30px;
   color: #c80000;
+}
+
+.poll-deadline {
+  color:
+}
+
+.deadline-container {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 620px) {
+  .auth-container {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  img.avatar, .welcome-title, .btn-home, .btn-logout, .btn-login {
+    margin: 5px auto;
+  }
+  #status-message, #connected-users-count {
+    text-align: center;
+    display: block;
+    margin: 0px 20px 10px 20px;
+  }
 }

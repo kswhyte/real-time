@@ -89,6 +89,9 @@ input, input:valid {
   background-color: #e0e0e0;
 }
 
+li.poll-deadline {
+  color: #606bf7;
+}
 
 #poll-form {
   display: flex;

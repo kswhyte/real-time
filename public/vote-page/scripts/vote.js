@@ -37,7 +37,6 @@ const getCurrentPoll = (pollID) => {
 const renderProfileImgs = () => {
   $.get('/api/v1/vote_results')
     .then(results => {
-      console.log('results', results)
       results.forEach((userSelection) => {
         $(`#option${userSelection.optionID}`).append(
           `<img class='user-profile-img' src='${userSelection.profileImg}'>`
@@ -54,11 +53,8 @@ const renderCurrentPoll = (poll) => {
   $('#option3').append(`<button class='poll-option-button ${poll.pollOptions[2].id}'>${poll.pollOptions[2].pollData}</button>`)
   $('#option4').append(`<button class='poll-option-button ${poll.pollOptions[3].id}'>${poll.pollOptions[3].pollData}</button>`)
 
-  $('.deadline-container').append(`
-    <h3 class='deadline'>This poll ends on
-    <span id='ending-date'>${poll.deadlines[1].endingDate}</span>
-    at <span id='ending-time'>${poll.deadlines[0].endingTime}</span></h3>
-  `)
+  $('.ending-date').append(`<h3 class='deadline'>This poll ends on <span id='ending-date'>${poll.deadlines[1].endingDate}</span></h3>`)
+  $('.ending-time').append(`<h3 class='deadline'>at <span id='ending-time'>${poll.deadlines[0].endingTime}</span></h3>`)
 
   if (!profileActive) {
     $('#poll-container').hide()
@@ -100,12 +96,12 @@ $('#option4').on('click', (e) => {
   socket.emit('voteCast', optionID, profileImg)
 })
 
-socket.on('usersConnected', (count) => {
-  connectedUsers.text('Connected Users: ' + count)
+socket.on('statusMessage', (message) => {
+  statusMessage.text(`Status: ${message}`)
 })
 
-socket.on('statusMessage', (message) => {
-  statusMessage.text(message)
+socket.on('usersConnected', (count) => {
+  connectedUsers.text(`Connected Users: ${count}`)
 })
 
 socket.on('voteCount', (voteResults) => {
