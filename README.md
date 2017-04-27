@@ -1,15 +1,15 @@
-#Pollr
+# Real-Time | Pollr
 
-###Approach
+### Approach
 
 In this project, the chief aim was to explore client-side security with Auth0 and build a real-time application with communications to WebSockets. When the server gets new information, it pushes it out to all of the connected clients, who each authorize with a github account. A user will come to the web app to create a poll/question for whatever audience of choice using 4 options/answers to go with it. Then a user’s Github image will act as a marker to indicate when they have selected a poll option. All poll option selections update in real-time, and the poll 'admin' is able to specify an ending date and time.
 
-###On the Server
+### On the Server
 
 This is a Node/Express application that starts off keeping all of the data in memory using local variables.
 WebSockets are used to broadcast poll results to the client.
 
-###On the Client
+### On the Client
 
 jQuery is used for all updating and DOM manipulations.
 WebSockets are used to broadcast a user's vote to the server.
@@ -23,7 +23,7 @@ Auth0 is used to authorize the client with a Github account.
 
 [Live Version](https://poll-bui1der.herokuapp.com/polls)
 
-###DEVELOPMENT:
+### DEVELOPMENT:
 
 1. Pull this repository down with ```git clone```.
 2. ```npm install```
