@@ -23,7 +23,11 @@ Auth0 is used to authorize the client with a Github account.
 
    <img align=center width="718" alt="screen shot 2017-02-03 at 2 59 31 am" src="https://cloud.githubusercontent.com/assets/13802107/22587115/83337454-e9bd-11e6-8938-71214e31df44.png">
 
+---
+
 [Original Assignment](http://frontend.turing.io/projects/real-time.html)
+
+---
 
 ### DEVELOPMENT:
 
